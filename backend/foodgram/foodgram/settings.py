@@ -1,5 +1,5 @@
 import os
-
+from distutils.util import strtobool
 from core import constants
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -10,12 +10,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ecxcg&cv2t34_9_#23d-cwj$^kbc@qaz@+s!18ie7lucw!4tm)'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-whatever123')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'false')))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS','localhost').split(',') 
 
 AUTH_USER_MODEL = 'users.User'
 
