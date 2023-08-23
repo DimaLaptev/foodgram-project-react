@@ -13,7 +13,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    image: shipilenok/foodgram_backend
+    image: shipilenok1/foodgram_backend
     env_file: .env
     volumes:
       - static:/static/
@@ -21,13 +21,13 @@ services:
       - ./data:/app/data/
 
   frontend:
-    image: shipilenok/foodgram_frontend
+    image: shipilenok1/foodgram_frontend
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
 
   nginx:
-    image: shipilenok/foodgram_gateway
+    image: shipilenok1/foodgram_gateway
     ports:
       - "8000:80"
     volumes:
