@@ -72,4 +72,4 @@ jobs:
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py import_ingredients data/ingredients.json
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py import_tags data/tags.json
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
-            sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/backend_static/. /static/static/
+            sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/static/. /static/static/
