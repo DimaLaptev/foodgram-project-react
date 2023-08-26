@@ -19,7 +19,6 @@ services:
     volumes:
       - static:/app/static/
       - media:/app/media/
-      - ./data:/app/data/
   frontend:
     image: shipilenok1/foodgram_frontend
     volumes:
