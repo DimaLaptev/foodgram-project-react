@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Subscribe, User
+from users.models import Subscribe, User
 
 
 EMPTY_STRING: str = '-пусто-'

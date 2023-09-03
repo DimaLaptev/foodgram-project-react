@@ -16,10 +16,10 @@ class Command(BaseCommand):
         with open(json_file, 'r') as jsonfile:
             tags = json.load(jsonfile)
             for tag in tags:
-                Tag.objects.get_or_create(
-                    slug=tag['slug'],
+                Tag.objects.bulk_create([
+                    Tag(slug=tag['slug'],
                     name=tag['name'],
-                    color=tag['color']
-                )
+                    color=tag['color'])
+                ])
 
         self.stdout.write(self.style.SUCCESS('Import was successful!'))
