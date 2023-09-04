@@ -18,8 +18,8 @@ class Command(BaseCommand):
             for tag in tags:
                 Tag.objects.bulk_create([
                     Tag(slug=tag['slug'],
-                    name=tag['name'],
-                    color=tag['color'])
+                        name=tag['name'],
+                        color=tag['color'])
                 ])
 
         self.stdout.write(self.style.SUCCESS('Import was successful!'))

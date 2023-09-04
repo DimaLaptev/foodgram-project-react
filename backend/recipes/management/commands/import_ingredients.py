@@ -16,7 +16,8 @@ class Command(BaseCommand):
             ingredients = json.load(jsonfile)
             for ingredient in ingredients:
                 Ingredient.objects.bulk_create([
-                    Ingredient(name=ingredient['name'],
+                    Ingredient(
+                    name=ingredient['name'],
                     measurement_unit=ingredient['measurement_unit'])
                 ])
 
