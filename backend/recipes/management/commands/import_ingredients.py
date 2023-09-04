@@ -19,7 +19,7 @@ class Command(BaseCommand):
                     Ingredient(name=ingredient['name'],
                                measurement_unit=ingredient[
                                    'measurement_unit'
-                               ])
+                    ])
                 ])
 
         self.stdout.write(self.style.SUCCESS('Import was successful'))
