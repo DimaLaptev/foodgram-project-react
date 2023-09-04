@@ -18,8 +18,8 @@ class Command(BaseCommand):
                 Ingredient.objects.bulk_create([
                     Ingredient(name=ingredient['name'],
                                measurement_unit=ingredient[
-                            'measurement_unit'
-                        ])
+                                   'measurement_unit'
+                               ])
                 ])
 
         self.stdout.write(self.style.SUCCESS('Import was successful'))
