@@ -16,9 +16,10 @@ class Command(BaseCommand):
             ingredients = json.load(jsonfile)
             for ingredient in ingredients:
                 Ingredient.objects.bulk_create([
-                    Ingredient(
-                    name=ingredient['name'],
-                    measurement_unit=ingredient['measurement_unit'])
+                    Ingredient(name=ingredient['name'],
+                               measurement_unit=ingredient[
+                            'measurement_unit'
+                        ])
                 ])
 
         self.stdout.write(self.style.SUCCESS('Import was successful'))
