@@ -27,7 +27,7 @@ python manage.py runserver
 cd frontend
 npm start
 
-Откройте браузер, проект будет доступен по адресу http://localhost:8000
+Откройте браузер, проект будет доступен по url-адресу http://localhost:8000
 
 # Автор
 Дмитрий Шипилов
